@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DRBlog.Web", "DRBlog.Web\DRBlog.Web.csproj", "{2972FBBE-252A-4C96-AF80-CB412552A2A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DRBlog.Admin", "DRBlog.Admin\DRBlog.Admin.csproj", "{805B1329-CFFF-4FB2-A43D-FE10C05E599C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DRBlog.Core", "DRBlog.Core\DRBlog.Core.csproj", "{A83D6102-324D-43F9-8C15-4A3B164F7598}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DRBlog.Data", "DRBlog.Data\DRBlog.Data.csproj", "{EC1B5285-830C-4350-95D6-0E3B16FB6650}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DRBlog.Framework", "DRBlog.Framework\DRBlog.Framework.csproj", "{B2FE1972-C530-4B64-A41D-657A1205B104}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DRBlog.Services", "DRBlog.Services\DRBlog.Services.csproj", "{9B002C08-2639-478B-BAC5-0E25708DC6EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DRBlog.Domain", "DRBlog.Domain\DRBlog.Domain.csproj", "{617E3E19-B5BB-41CC-BBD6-7109B5DD7F96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2972FBBE-252A-4C96-AF80-CB412552A2A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2972FBBE-252A-4C96-AF80-CB412552A2A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2972FBBE-252A-4C96-AF80-CB412552A2A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2972FBBE-252A-4C96-AF80-CB412552A2A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{805B1329-CFFF-4FB2-A43D-FE10C05E599C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{805B1329-CFFF-4FB2-A43D-FE10C05E599C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{805B1329-CFFF-4FB2-A43D-FE10C05E599C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{805B1329-CFFF-4FB2-A43D-FE10C05E599C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A83D6102-324D-43F9-8C15-4A3B164F7598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A83D6102-324D-43F9-8C15-4A3B164F7598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A83D6102-324D-43F9-8C15-4A3B164F7598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A83D6102-324D-43F9-8C15-4A3B164F7598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC1B5285-830C-4350-95D6-0E3B16FB6650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC1B5285-830C-4350-95D6-0E3B16FB6650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC1B5285-830C-4350-95D6-0E3B16FB6650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC1B5285-830C-4350-95D6-0E3B16FB6650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2FE1972-C530-4B64-A41D-657A1205B104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2FE1972-C530-4B64-A41D-657A1205B104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2FE1972-C530-4B64-A41D-657A1205B104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2FE1972-C530-4B64-A41D-657A1205B104}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B002C08-2639-478B-BAC5-0E25708DC6EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B002C08-2639-478B-BAC5-0E25708DC6EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B002C08-2639-478B-BAC5-0E25708DC6EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B002C08-2639-478B-BAC5-0E25708DC6EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{617E3E19-B5BB-41CC-BBD6-7109B5DD7F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{617E3E19-B5BB-41CC-BBD6-7109B5DD7F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{617E3E19-B5BB-41CC-BBD6-7109B5DD7F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{617E3E19-B5BB-41CC-BBD6-7109B5DD7F96}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal

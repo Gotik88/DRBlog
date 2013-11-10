@@ -1,0 +1,5 @@
+C:\Projects\DRBlog\DRBlog.Data\bin\Debug\DRBlog.Data.dll
+C:\Projects\DRBlog\DRBlog.Data\bin\Debug\DRBlog.Data.pdb
+C:\Projects\DRBlog\DRBlog.Data\obj\Debug\DRBlog.Data.csprojResolveAssemblyReference.cache
+C:\Projects\DRBlog\DRBlog.Data\obj\Debug\DRBlog.Data.dll
+C:\Projects\DRBlog\DRBlog.Data\obj\Debug\DRBlog.Data.pdb

@@ -1,0 +1,2 @@
+c:\users\dromanii\documents\visual studio 2012\Projects\DRBlog\DRBlog.Web\obj\Debug\DRBlog.Web.csprojResolveAssemblyReference.cache
+C:\Projects\DRBlog\DRBlog.Web\obj\Debug\DRBlog.Web.csprojResolveAssemblyReference.cache
