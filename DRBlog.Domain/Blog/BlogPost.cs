@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DRBlog.Core.Domain;
 
 namespace DRBlog.Domain.Blog
 {

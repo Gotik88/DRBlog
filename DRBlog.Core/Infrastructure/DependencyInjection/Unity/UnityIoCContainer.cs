@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Castle.Core.Internal;
@@ -18,7 +19,7 @@ namespace DRBlog.Core.Infrastructure.DependencyInjection.Unity
             _container = new UnityContainer();
         }
 
-        public override ComponentLifeStyle DefaultComponentLifeStyle
+        public ComponentLifeStyle DefaultComponentLifeStyle
         {
             get
             {
@@ -31,7 +32,7 @@ namespace DRBlog.Core.Infrastructure.DependencyInjection.Unity
             _container.AddNewExtension<Microsoft.Practices.Unity.InterceptionExtension.Interception>();
         }
 
-        #region Registration
+        /*#region Registration
 
 
         public void RegisterType<TService>(ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default) where TService : class
@@ -43,11 +44,11 @@ namespace DRBlog.Core.Infrastructure.DependencyInjection.Unity
             where TService : class
             where TServiceImplementation : TService
         {
-            _container.RegisterType<TService, TServiceImplementation>(); // should set life style
+            _container.RegisterType<TService, TServiceImplementation>();*/ // should set life style
             /*container.AddNewExtension<Interception>();
             container.Configure<Interception>()
                 .SetInterceptorFor<ILogger>(new TransparentProxyInterceptor());*/
-        }
+        /*}
 
         #region by Convention (auto-registration)
 
@@ -56,10 +57,10 @@ namespace DRBlog.Core.Infrastructure.DependencyInjection.Unity
             where TInterface : TService
         {
             _container.RegisterType(typeof(TInterface), typeof(TService));
-        }
+        }*/
 
         // all types that implement an interface with IService/Service naming convention
-        public void RegisterServiceToInterfaceConvention(Func<Type, bool> predicate = null)
+        /*public void RegisterServiceToInterfaceConvention(Func<Type, bool> predicate = null)
         {
             if (predicate == null)
             {
@@ -67,11 +68,46 @@ namespace DRBlog.Core.Infrastructure.DependencyInjection.Unity
             }
 
             _container.RegisterTypes(AllClasses.FromLoadedAssemblies().Where(predicate), WithMappings.FromMatchingInterface, WithName.Default);
+        }*/
+
+        //#endregion
+
+        //#endregion
+
+        public override void RegisterInstance<TInstance>(TInstance instance, ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default)
+        {
+           // _container.RegisterInstance((object)instance).As<TInstance>().Lifestyle(lifeStyle);
         }
 
-        #endregion
+        public override void RegisterType<TImplementation>(ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default)
+        {
+           // _container.RegisterType<TImplementation>().Lifestyle(lifeStyle);
+        }
 
-        #endregion
+        public override void RegisterType<TService, TImplementation>(ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default)
+        {
+          //  _container.RegisterType<TImplementation>().As<TService>().Lifestyle(lifeStyle);
+        }
+
+        public override void RegisterGeneric(Type implementation, Type abstraction, ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default)
+        {
+          //  _container.RegisterGeneric(implementation).As(abstraction).Lifestyle(lifeStyle);
+        }
+
+        public override void RegisterServiceToInterfaceConvention(Func<Type, bool> predicate = null)
+        {
+           /* if (predicate == null)
+            {
+                predicate = _ => true;
+            }
+
+            _container.RegisterTypes().Where(predicate);*/
+        }
+
+        public void RegisterControllers(params Assembly[] controllerAssemblies)
+        {
+           // _container.RegisterControllers(controllerAssemblies);
+        }
 
         #region Interception
         // of using TransparentProxyInterceptor or InterfaceInterceptor - Unity create proxy object at run time and we can't cast to TServiceImplementation during run time

@@ -9,13 +9,15 @@ namespace DRBlog.Framework.Mvc
     {
         public object GetService(Type serviceType)
         {
-            return EngineContext.Current.ContainerManager.Container.ResolveOptional(serviceType);
+            return null;
+            //return EngineContext.Current.ContainerManager.Container.ResolveOptional(serviceType);
         }
 
         public IEnumerable<object> GetServices(Type serviceType)
         {
-            var type = typeof(IEnumerable<>).MakeGenericType(serviceType);
-            return (IEnumerable<object>)EngineContext.Current.ContainerManager.Container.Resolve(type);
+            return null;
+            // var type = typeof(IEnumerable<>).MakeGenericType(serviceType);
+            //return (IEnumerable<object>)EngineContext.Current.ContainerManager.Container.Resolve(type);
         }
     }
 }

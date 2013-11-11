@@ -1,5 +1,5 @@
 ﻿using DRBlog.Core.Data;
-using DRBlog.Domain;
+using DRBlog.Core.Domain;
 
 namespace DRBlog.Data
 {

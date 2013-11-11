@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DRBlog.Domain
+namespace DRBlog.Core.Domain
 {
     public abstract class BaseEntity
     {

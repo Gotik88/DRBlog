@@ -1,10 +1,11 @@
 ﻿using System;
+using Castle.MicroKernel.ModelBuilder.Descriptors;
 
 namespace DRBlog.Core.Infrastructure.DependencyInjection
 {
     public interface IIoCContainerRegistration
     {
-        void RegisterInstance<TInstance>(TInstance instance, ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default) where TInstance : class;
+        void RegisterInstance<TInstance>(TInstance instance, ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default);
 
         void RegisterType<TService>(ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default) where TService : class;
 

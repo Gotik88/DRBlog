@@ -17,7 +17,7 @@ namespace DRBlog.Web.Controllers
 
         private void LogException(Exception exc)
         {
-           // var workContext = EngineContext.Current.Resolve<IWorkContext>();
+            // var workContext = EngineContext.Current.Resolve<IWorkContext>();
             //var logger = EngineContext.Current.Resolve<ILogger>();
 
             //var customer = workContext.CurrentCustomer;
@@ -30,7 +30,7 @@ namespace DRBlog.Web.Controllers
         /// <param name="persistForTheNextRequest">A value indicating whether a message should be persisted for the next request</param>
         protected virtual void SuccessNotification(string message, bool persistForTheNextRequest = true)
         {
-            AddNotification(NotifyType.Success, message, persistForTheNextRequest);
+            //AddNotification(NotifyType.Success, message, persistForTheNextRequest);
         }
         /// <summary>
         /// Display error notification
@@ -39,7 +39,7 @@ namespace DRBlog.Web.Controllers
         /// <param name="persistForTheNextRequest">A value indicating whether a message should be persisted for the next request</param>
         protected virtual void ErrorNotification(string message, bool persistForTheNextRequest = true)
         {
-            AddNotification(NotifyType.Error, message, persistForTheNextRequest);
+            //AddNotification(NotifyType.Error, message, persistForTheNextRequest);
         }
         /// <summary>
         /// Display error notification
@@ -51,7 +51,7 @@ namespace DRBlog.Web.Controllers
         {
             if (logException)
                 LogException(exception);
-            AddNotification(NotifyType.Error, exception.Message, persistForTheNextRequest);
+            //AddNotification(NotifyType.Error, exception.Message, persistForTheNextRequest);
         }
         /// <summary>
         /// Display notification
@@ -59,7 +59,7 @@ namespace DRBlog.Web.Controllers
         /// <param name="type">Notification type</param>
         /// <param name="message">Message</param>
         /// <param name="persistForTheNextRequest">A value indicating whether a message should be persisted for the next request</param>
-        protected virtual void AddNotification(NotifyType type, string message, bool persistForTheNextRequest)
+        /*protected virtual void AddNotification(NotifyType type, string message, bool persistForTheNextRequest)
         {
             string dataKey = string.Format("sm.notifications.{0}", type);
             if (persistForTheNextRequest)
@@ -74,7 +74,7 @@ namespace DRBlog.Web.Controllers
                     ViewData[dataKey] = new List<string>();
                 ((List<string>)ViewData[dataKey]).Add(message);
             }
-        }
+        }*/
 
     }
 }

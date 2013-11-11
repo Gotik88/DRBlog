@@ -1,5 +1,4 @@
-﻿using System;
-using System.Web;
+﻿using System.Web;
 using DRBlog.Core.Infrastructure.DependencyInjection;
 using DRBlog.Core.Infrastructure.DependencyInjection.Module;
 
@@ -7,7 +6,7 @@ namespace DRBlog.Framework.Mvc.Modules
 {
     public class WebTypesModule : IIoCModule
     {
-        public void Load(IIoCContainer container)
+        public void Load(IoCContainer container)
         {
             var context = new HttpContextWrapper(HttpContext.Current);
 

@@ -9,7 +9,7 @@ using Autofac.Integration.Mvc;
 
 namespace DRBlog.Core.Infrastructure.DependencyInjection.Autofac
 {
-    internal class RequestLifetimeHttpModule : IHttpModule, ILifetimeScopeProvider
+    internal class RequestLifetimeHttpModule : IHttpModule//, ILifetimeScopeProvider
     {
         /// <summary>
         /// Tag used to identify registrations that are scoped to the HTTP request level.
