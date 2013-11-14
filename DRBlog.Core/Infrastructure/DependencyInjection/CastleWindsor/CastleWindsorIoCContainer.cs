@@ -22,21 +22,34 @@ namespace DRBlog.Core.Infrastructure.DependencyInjection.CastleWindsor
 
         // Singleton as default lifestyle
 
-        public void RegisterInstance<TService>(TService instance, ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default)
+        public override void RegisterInstance<TInstance>(TInstance instance, ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default)
         {
-            _container.Register(Component.For<TService>().Instance(instance).Lifestyle(lifeStyle)); // When you register an existing instance, even if you specify a lifestyle it will be ignored. 
+            //_container.Register(Component.For<TInstance>().Instance(instance).Lifestyle(lifeStyle)); // When you register an existing instance, even if you specify a lifestyle it will be ignored. 
         }
 
-        public void RegisterType<TService>(ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default)
+        public override void RegisterType<TService>(ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default)
         {
             _container.Register(RegisterInstance<TService>().Lifestyle(lifeStyle));
         }
 
-        public void RegisterType<TService, TServiceImplementation>(ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default)
-            where TService : class
-            where TServiceImplementation : TService
+        public override void RegisterType<TService, TImplementation>(ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default)
         {
-            _container.Register(RegisterInstance<TService, TServiceImplementation>().Lifestyle(lifeStyle));
+            //_container.Register(RegisterInstance<TService, TImplementation>().Lifestyle(lifeStyle));
+        }
+
+        public override void RegisterGeneric(Type implementation, Type abstraction, ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default)
+        {
+            //  _container.RegisterGeneric(implementation).As(abstraction).Lifestyle(lifeStyle);
+        }
+
+        public override void RegisterServiceToInterfaceConvention(Func<Type, bool> predicate = null)
+        {
+            /* if (predicate == null)
+             {
+                 predicate = _ => true;
+             }
+
+             _container.RegisterTypes().Where(predicate);*/
         }
 
         public void RegisterGeneric<TService, TServiceImplementation>(ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default)
@@ -47,8 +60,8 @@ namespace DRBlog.Core.Infrastructure.DependencyInjection.CastleWindsor
         }
 
         private static ComponentRegistration<TService> RegisterInstance<TService, TServiceImplementation>()
-            where TService : class
             where TServiceImplementation : TService
+            where TService : class
         {
             return Component.For<TService>().ImplementedBy<TServiceImplementation>();
         }

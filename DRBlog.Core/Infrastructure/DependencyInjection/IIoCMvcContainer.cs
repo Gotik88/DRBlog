@@ -4,6 +4,6 @@ namespace DRBlog.Core.Infrastructure.DependencyInjection
 {
     public interface IIoCMvcContainer
     {
-        void RegisterControllers(params Assembly[] controllerAssemblies);
+        //void RegisterControllers(params Assembly[] controllerAssemblies);
     }
 }

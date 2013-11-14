@@ -41,7 +41,7 @@ namespace DRBlog.Core.Infrastructure.DependencyInjection.CastleWindsor
         public object Resolve(CreationContext context)
         {
             return LifetimeScopeStore.Get<TContext>()
-                .GetOrAdd(this, lifestyleManager => new ComponentInstance(lifestyleManager, base.Resolve(context)))
+                .GetOrAdd(this, lifestyleManager => new ComponentInstance(lifestyleManager, base.Resolve(context, null)))
                 .Instance;
         }
     }

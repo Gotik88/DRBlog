@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using DRBlog.Core;
+using DRBlog.Core.Data;
 using DRBlog.Domain;
 using System;
 using System.Collections.Generic;
@@ -47,7 +48,7 @@ namespace DRBlog.Services
             if (blogPost == null)
                 throw new ArgumentNullException("blogPost");
 
-            _blogPostRepository.Delete(blogPost);
+            //_blogPostRepository.Delete(blogPost);
 
             //event notification
             /*_eventPublisher.EntityDeleted(blogPost);*/
@@ -63,7 +64,8 @@ namespace DRBlog.Services
             if (blogPostId == 0)
                 return null;
 
-            return _blogPostRepository.GetById(blogPostId);
+            return null;
+            //return _blogPostRepository.GetById(blogPostId);
         }
 
         /// <summary>
@@ -80,7 +82,7 @@ namespace DRBlog.Services
         public virtual IPagedList<BlogPost> GetAllBlogPosts(int storeId, int languageId,
             DateTime? dateFrom, DateTime? dateTo, int pageIndex, int pageSize, bool showHidden = false)
         {
-            var query = _blogPostRepository.Table;
+            /*var query = _blogPostRepository.Table;
             if (dateFrom.HasValue)
                 query = query.Where(b => dateFrom.Value <= b.CreatedOnUtc);
             if (dateTo.HasValue)
@@ -95,27 +97,28 @@ namespace DRBlog.Services
             }
 
             if (storeId > 0)
-            {
-                //Store mapping
-                /*query = from bp in query
-                        join sm in _storeMappingRepository.Table
-                        on new { c1 = bp.Id, c2 = "BlogPost" } equals new { c1 = sm.EntityId, c2 = sm.EntityName } into bp_sm
-                        from sm in bp_sm.DefaultIfEmpty()
-                        where !bp.LimitedToStores || storeId == sm.StoreId
-                        select bp;*/
+            {*/
+            //Store mapping
+            /*query = from bp in query
+                    join sm in _storeMappingRepository.Table
+                    on new { c1 = bp.Id, c2 = "BlogPost" } equals new { c1 = sm.EntityId, c2 = sm.EntityName } into bp_sm
+                    from sm in bp_sm.DefaultIfEmpty()
+                    where !bp.LimitedToStores || storeId == sm.StoreId
+                    select bp;*/
 
-                //only distinct blog posts (group by ID)
-                query = from bp in query
-                        group bp by bp.Id
-                            into bpGroup
-                            orderby bpGroup.Key
-                            select bpGroup.FirstOrDefault();
-            }
+            //only distinct blog posts (group by ID)
+            /* query = from bp in query
+                     group bp by bp.Id
+                         into bpGroup
+                         orderby bpGroup.Key
+                         select bpGroup.FirstOrDefault();
+         }
 
-            query = query.OrderByDescending(b => b.CreatedOnUtc);
+         query = query.OrderByDescending(b => b.CreatedOnUtc);
 
-            var blogPosts = new PagedList<BlogPost>(query, pageIndex, pageSize);
-            return blogPosts;
+         var blogPosts = new PagedList<BlogPost>(query, pageIndex, pageSize);
+         return blogPosts;*/
+            return null;
         }
 
         /// <summary>
@@ -192,7 +195,7 @@ namespace DRBlog.Services
             if (blogPost == null)
                 throw new ArgumentNullException("blogPost");
 
-            _blogPostRepository.Insert(blogPost);
+            // _blogPostRepository.Insert(blogPost);
 
             //event notification
             //_eventPublisher.EntityInserted(blogPost);
@@ -207,7 +210,7 @@ namespace DRBlog.Services
             if (blogPost == null)
                 throw new ArgumentNullException("blogPost");
 
-            _blogPostRepository.Update(blogPost);
+            //_blogPostRepository.Update(blogPost);
 
             //event notification
             //_eventPublisher.EntityUpdated(blogPost);
@@ -220,12 +223,13 @@ namespace DRBlog.Services
         /// <returns>Comments</returns>
         public virtual IList<BlogComment> GetAllComments(int customerId)
         {
-            var query = from c in _blogCommentRepository.Table
+            /*var query = from c in _blogCommentRepository.Table
                         orderby c.CreatedOnUtc
                         where (customerId == 0 || c.CustomerId == customerId)
                         select c;
             var content = query.ToList();
-            return content;
+            return content;*/
+            return null;
         }
 
         /// <summary>
@@ -238,7 +242,7 @@ namespace DRBlog.Services
             if (blogCommentId == 0)
                 return null;
 
-            return _blogCommentRepository.GetById(blogCommentId);
+            return null; //_blogCommentRepository.GetById(blogCommentId);
         }
 
         /// <summary>
@@ -250,7 +254,7 @@ namespace DRBlog.Services
             if (blogComment == null)
                 throw new ArgumentNullException("blogComment");
 
-            _blogCommentRepository.Delete(blogComment);
+            // _blogCommentRepository.Delete(blogComment);
         }
 
         #endregion

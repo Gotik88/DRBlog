@@ -46,12 +46,12 @@ namespace DRBlog.Core.Infrastructure.DependencyInjection.Autofac
 
         public override void RegisterInstance<TInstance>(TInstance instance, ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default)
         {
-            _container.RegisterInstance(instance).As<TInstance>().Lifestyle(lifeStyle);
+            _container.RegisterInstance((object)instance).As<TInstance>().Lifestyle(lifeStyle);
         }
 
-        public override void RegisterType<TService>(ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default)
+        public override void RegisterType<TImplementation>(ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default)
         {
-            _container.RegisterType<TService>().Lifestyle(lifeStyle);
+            _container.RegisterType<TImplementation>().Lifestyle(lifeStyle);
         }
 
         public override void RegisterType<TService, TImplementation>(ComponentLifeStyle lifeStyle = ComponentLifeStyle.Default)
@@ -74,7 +74,7 @@ namespace DRBlog.Core.Infrastructure.DependencyInjection.Autofac
             _container.RegisterTypes().Where(predicate);
         }
 
-        public override void RegisterControllers(params Assembly[] controllerAssemblies)
+        public void RegisterControllers(params Assembly[] controllerAssemblies)
         {
             _container.RegisterControllers(controllerAssemblies);
         }
@@ -83,7 +83,7 @@ namespace DRBlog.Core.Infrastructure.DependencyInjection.Autofac
 
         #region Resolution
 
-        public override T Resolve<T>(string key = "")
+        public T Resolve<T>(string key = "")
         {
             if (string.IsNullOrEmpty(key))
             {
@@ -92,12 +92,12 @@ namespace DRBlog.Core.Infrastructure.DependencyInjection.Autofac
             return Scope().ResolveKeyed<T>(key);
         }
 
-        public override object Resolve(Type type)
+        public object Resolve(Type type)
         {
             return Scope().Resolve(type);
         }
 
-        public override T[] ResolveAll<T>(string key = "")
+        public T[] ResolveAll<T>(string key = "")
         {
             if (string.IsNullOrEmpty(key))
             {
@@ -106,12 +106,13 @@ namespace DRBlog.Core.Infrastructure.DependencyInjection.Autofac
             return Scope().ResolveKeyed<IEnumerable<T>>(key).ToArray();
         }
 
-        public override T ResolveUnregistered<T>()
+        public T ResolveUnregistered<T>()
+            where T : class
         {
             return ResolveUnregistered(typeof(T)) as T;
         }
 
-        public override object ResolveUnregistered(Type type)
+        public object ResolveUnregistered(Type type)
         {
             var constructors = type.GetConstructors();
             foreach (var constructor in constructors)
@@ -136,17 +137,17 @@ namespace DRBlog.Core.Infrastructure.DependencyInjection.Autofac
             throw new Exception("No contructor was found that had all the dependencies satisfied.");
         }
 
-        public override bool TryResolve(Type serviceType, out object instance)
+        public bool TryResolve(Type serviceType, out object instance)
         {
             return Scope().TryResolve(serviceType, out instance);
         }
 
-        public override bool IsRegistered(Type serviceType)
+        public bool IsRegistered(Type serviceType)
         {
             return Scope().IsRegistered(serviceType);
         }
 
-        public override object ResolveOptional(Type serviceType)
+        public object ResolveOptional(Type serviceType)
         {
             return Scope().ResolveOptional(serviceType);
         }

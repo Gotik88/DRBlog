@@ -3,7 +3,7 @@ namespace DRBlog.Core.Infrastructure.DependencyInjection
 {
     public interface IDependencyRegistrator
     {
-        void Register(IIoCContainer container);
+        void Register(IoCContainer container);
 
         int Order { get; }
     }
