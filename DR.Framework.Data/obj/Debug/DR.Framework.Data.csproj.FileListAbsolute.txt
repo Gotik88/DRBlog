@@ -1,0 +1,5 @@
+C:\Projects\DRBlog\DR.Framework.Data\bin\Debug\DR.Framework.Data.dll
+C:\Projects\DRBlog\DR.Framework.Data\bin\Debug\DR.Framework.Data.pdb
+C:\Projects\DRBlog\DR.Framework.Data\obj\Debug\DR.Framework.Data.csprojResolveAssemblyReference.cache
+C:\Projects\DRBlog\DR.Framework.Data\obj\Debug\DR.Framework.Data.dll
+C:\Projects\DRBlog\DR.Framework.Data\obj\Debug\DR.Framework.Data.pdb

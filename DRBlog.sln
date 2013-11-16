@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DRBlog.Services", "DRBlog.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DRBlog.Domain", "DRBlog.Domain\DRBlog.Domain.csproj", "{617E3E19-B5BB-41CC-BBD6-7109B5DD7F96}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{B40ED536-6D6A-4615-9481-B7CA391532DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DR.Framework.Data", "DR.Framework.Data\DR.Framework.Data.csproj", "{5662005C-5468-407E-9BDF-11A0CC27219A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,9 +53,16 @@ Global
 		{617E3E19-B5BB-41CC-BBD6-7109B5DD7F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{617E3E19-B5BB-41CC-BBD6-7109B5DD7F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{617E3E19-B5BB-41CC-BBD6-7109B5DD7F96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5662005C-5468-407E-9BDF-11A0CC27219A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5662005C-5468-407E-9BDF-11A0CC27219A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5662005C-5468-407E-9BDF-11A0CC27219A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5662005C-5468-407E-9BDF-11A0CC27219A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5662005C-5468-407E-9BDF-11A0CC27219A} = {B40ED536-6D6A-4615-9481-B7CA391532DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
