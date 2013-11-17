@@ -1,9 +1,22 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace DRBlog.Core.Infrastructure.Engine
+﻿namespace DRBlog.Core.Infrastructure.Engine
 {
+    using System.Runtime.CompilerServices;
+
     public class EngineContext
     {
+        public static IEngine Current
+        {
+            get
+            {
+                if (Singleton<IEngine>.Instance == null)
+                {
+                    Initialize();
+                }
+
+                return Singleton<IEngine>.Instance;
+            }
+        }
+
         [MethodImpl(MethodImplOptions.Synchronized)]
         public static IEngine Initialize()
         {
@@ -19,19 +32,6 @@ namespace DRBlog.Core.Infrastructure.Engine
         public static IEngine CreateInstance()
         {
             return new Engine();
-        }
-
-        public static IEngine Current
-        {
-            get
-            {
-                if (Singleton<IEngine>.Instance == null)
-                {
-                    Initialize();
-                }
-
-                return Singleton<IEngine>.Instance;
-            }
         }
     }
 }

@@ -1,16 +1,19 @@
-﻿using DRBlog.Core.Infrastructure.Engine;
-using System;
-using System.Collections.Generic;
-using System.Web.Mvc;
+﻿
+
 
 namespace DRBlog.Framework.Mvc
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Web.Mvc;
+
+    using DRBlog.Core.Infrastructure.Engine;
+
     public class MvcDependencyResolver : IDependencyResolver
     {
         public object GetService(Type serviceType)
         {
-            return null;
-            //return EngineContext.Current.ContainerManager.Container.ResolveOptional(serviceType);
+            return EngineContext.Current.ContainerManager.Container.ResolveOptional(serviceType);
         }
 
         public IEnumerable<object> GetServices(Type serviceType)

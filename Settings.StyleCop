@@ -58,13 +58,18 @@
             <BooleanProperty Name="Enabled">False</BooleanProperty>
           </RuleSettings>
         </Rule>
+        <Rule Name="FileMustHaveHeader">
+          <RuleSettings>
+            <BooleanProperty Name="Enabled">False</BooleanProperty>
+          </RuleSettings>
+        </Rule>
       </Rules>
       <AnalyzerSettings>
         <BooleanProperty Name="IgnorePrivates">True</BooleanProperty>
         <BooleanProperty Name="IgnoreInternals">True</BooleanProperty>
         <BooleanProperty Name="IncludeFields">False</BooleanProperty>
-        <StringProperty Name="CompanyName">The Dmytro Romanii Corporation</StringProperty>
-        <StringProperty Name="Copyright">Copyright (c) The Dmytro Romanii Corporation 2013. All rights reserved.</StringProperty>
+        <StringProperty Name="CompanyName">Dmytro Romanii Corporation</StringProperty>
+        <StringProperty Name="Copyright">Copyright (c) Dmytro Romanii Corporation 2013. All rights reserved.</StringProperty>
       </AnalyzerSettings>
     </Analyzer>
     <Analyzer AnalyzerId="StyleCop.CSharp.NamingRules">

@@ -1,9 +1,16 @@
-﻿using DRBlog.Core.Data;
-using DRBlog.Core.Domain;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="EfRepository.cs" company="Dmytro Romanii Corporation">
+//   Copyright (c) Dmytro Romanii Corporation 2013. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace DRBlog.Data
 {
-    public partial class EfRepository<T> : IRepository<T> where T : BaseEntity
+    using Core.Data;
+    using Core.Domain;
+
+
+    public class EfRepository<T> : IRepository<T> where T : BaseEntity
     {
         /*private readonly IDbContext _context;
         private IDbSet<T> _entities;

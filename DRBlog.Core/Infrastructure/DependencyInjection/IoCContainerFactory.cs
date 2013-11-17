@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using DRBlog.Core.Infrastructure.DependencyInjection.Autofac;
-using DRBlog.Core.Infrastructure.DependencyInjection.CastleWindsor;
-using DRBlog.Core.Infrastructure.DependencyInjection.Unity;
-
-namespace DRBlog.Core.Infrastructure.DependencyInjection
+﻿namespace DRBlog.Core.Infrastructure.DependencyInjection
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using DRBlog.Core.Infrastructure.DependencyInjection.Autofac;
+    using DRBlog.Core.Infrastructure.DependencyInjection.CastleWindsor;
+    using DRBlog.Core.Infrastructure.DependencyInjection.Unity;
+
     public static class IoCContainerFactory
     {
         public static IoCContainer CreateContainer(IoCContainerType containerType)

@@ -1,14 +1,15 @@
-﻿using System.Web.Mvc;
-using DRBlog.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using DRBlog.Domain.Blog;
-using DRBlog.Web.Models;
-
+﻿
 namespace DRBlog.Web.Controllers
 {
+    using System.Web.Mvc;
+    using DRBlog.Services;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
+    using DRBlog.Domain.Blog;
+    using DRBlog.Web.Models;
+
     public class BlogController : BaseController
     {
         private readonly IBlogService _blogService;
@@ -25,10 +26,14 @@ namespace DRBlog.Web.Controllers
         protected void PrepareBlogPostModel(BlogPostModel model, BlogPost blogPost, bool prepareComments)
         {
             if (blogPost == null)
+            {
                 throw new ArgumentNullException("blogPost");
+            }
 
             if (model == null)
+            {
                 throw new ArgumentNullException("model");
+            }
 
             model.Id = blogPost.Id;
             model.MetaTitle = blogPost.MetaTitle;

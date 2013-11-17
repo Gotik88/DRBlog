@@ -1,14 +1,15 @@
-﻿using DRBlog.Core.Infrastructure.Engine;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
-
-namespace DRBlog.Web.Controllers
+﻿namespace DRBlog.Web.Framework.Controllers
 {
-    public abstract partial class BaseController : Controller
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
+    using System.Web.Mvc;
+    using System.Web.Routing;
+    using DRBlog.Web.Framework.Controllers;
+
+    public abstract class BaseController<T> : Controller
+        where T : struct
     {
         protected override void Initialize(RequestContext requestContext)
         {
@@ -76,5 +77,14 @@ namespace DRBlog.Web.Controllers
             }
         }*/
 
+        #region IAsyncResult
+
+        protected override IAsyncResult BeginExecute(RequestContext requestContext, AsyncCallback callback, object state)
+        {
+            //// should implement custom logic
+            return base.BeginExecute(requestContext, callback, state);
+        }
+
+        #endregion
     }
 }
